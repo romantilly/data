@@ -1,0 +1,44 @@
+---
+title: "01_import_describe"
+author: "Roman Tilly"
+date: "7 5 2019"
+output: 
+  flexdashboard::flex_dashboard:
+    orientation: columns
+    vertical_layout: fill
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, results = 'asis')
+
+source("aux.R")
+load.dependencies()
+load.data()
+```
+
+
+# Import
+```{r import}
+read.csv(filename = "clickstream/clickstream_columns.txt", var.name = "col.clickstream",
+         sep.between.cols = ":", sep.within.cols = ",", first.row.col.names = F)
+read.csv(filename = "clickstream/clickstream_data.csv", var.name = "dt.clickstream",
+         first.row.col.names = F, col.names = col.clickstream$V1, na.strings = c("?", "NULL"))
+
+
+overview.clickstream <- get.descriptive.table(dt.clickstream)
+
+read.csv(filename = "orders/order_columns.txt", var.name = "col.order",
+         sep.between.cols = ":", sep.within.cols = ",", first.row.col.names = F)
+read.csv(filename = "orders/order_data.csv", var.name = "dt.order",
+         first.row.col.names = F, col.names = col.order$V1, na.strings = c("?", "NULL"))
+
+
+
+```
+
+
+# Tidy
+```{r tidy}
+```
+
+# Describe
