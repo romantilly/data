@@ -1,7 +1,38 @@
 ![uzk_logo](uzk.png)
 
-# Programming Data Science
+# What we are supposed to do
 
-This repository contains the __data__ used for the group work. Please clone this directory and use it as a starting point. Expand the directory structure and everything else just as you wish. Try putting everything under source control, and use concepts like feature branches, pull requests, and code review to collaborate.
+1) import data for clickstreams and orders <br>
 
-At the end of the semester raise a pull request (this acts as the submission).
+2) clean imported data
+* set appropriate variable types
+* mark NA values
+* delete empty columns (only NAs)
+
+3) create plots<br>
+* simple univariate descriptive plots
+* time series
+* grouped plots for comparisons
+* more specific plots, e.g., distribution of revenue across products or
+product categories (long tail), Lorentz-curve
+
+4) further analysis; some ideas
+* try to merge clickstreams and orders
+* customer segmentation (recency, frequency, monetary value)
+* product clustering
+* streams of customers between product clusters (sankes diagram)
+* sequential patterns in clickstreams and orders
+
+# Regarding Programming in R and Python
+
+All exercises should be done in R _and_ Python. For the project, the following
+rules apply:
+
+
+Step  | R or Python
+--|--
+Import, manipulate  |  both, R: `tidyverse`, mostly `dplyr` , Python: `NumPy`, `Pandas`
+Plots  |  up to the teams, but the packages should implement the Grammer of Graphics (R: `ggplot2`, Python: `plotnine`)
+Documentation, Table  |  up to the teams
+Inference  |  up to the teams
+Prediction |  up to the teams (probably better in Python)
