@@ -8,6 +8,7 @@ load.dependencies <- function() {
   library(htmltools)
   library(psych)
   library(Hmisc)
+  library(dplyr)
 }
 
 

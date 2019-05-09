@@ -24,6 +24,8 @@ read.csv(filename = "clickstream/clickstream_columns.txt", var.name = "col.click
 read.csv(filename = "clickstream/clickstream_data.csv", var.name = "dt.clickstream",
          first.row.col.names = F, col.names = col.clickstream$V1, na.strings = c("?", "NULL"))
 
+str(dt.clickstream)
+str(dt.clickstream$Gender)
 
 overview.clickstream <- get.descriptive.table(dt.clickstream)
 
@@ -31,6 +33,8 @@ read.csv(filename = "orders/order_columns.txt", var.name = "col.order",
          sep.between.cols = ":", sep.within.cols = ",", first.row.col.names = F)
 read.csv(filename = "orders/order_data.csv", var.name = "dt.order",
          first.row.col.names = F, col.names = col.order$V1, na.strings = c("?", "NULL"))
+
+overview.order <- get.descriptive.table(dt.order)
 
 
 
